@@ -1,0 +1,148 @@
+* {
+    margin:0;
+    line-height:normal;
+}
+
+a {
+    color : whitesmoke;
+    text-decoration : none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color : whitesmoke;
+    font-size: 16px;
+    background-color: black;
+    font-family: "Outfit", sans-serif;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+hr {
+    /*border: none;
+    border-top: 1px solid #ccc;*/
+    margin: 0 1rem;
+    opacity: 0.5;
+}
+
+#portfolio-header {
+    padding: 1rem 0 0 1rem;
+}
+
+#portfolio-logo {
+    display: block;
+    width: 4rem;
+    border-radius: 50%;
+}
+
+#portfolio-about-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    padding: 8rem 2rem;
+}
+
+#portfolio-name{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#portfolio-socials {
+    display: flex;
+    column-gap: 2rem;
+    padding-top: 1rem;
+}
+
+.portfolio-social-icon {
+    vertical-align: middle;
+    width: 2rem;
+}
+
+#works-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: 4rem;
+}
+
+#works {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 0.5em;
+}
+
+.work {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.portfolio-work-link {
+    width: 100%;
+}
+
+.work-text {
+    position: absolute;
+    top: 0.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 black
+}
+
+.work-title {
+    left: 0.5rem;
+}
+
+.work-tag {
+    right: 0.5rem;
+    opacity: 0.75;
+}
+
+.work-thumbnail {
+    width: 100%;
+    filter: brightness(1);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 4rem 1rem;
+}
+
+#portfolio-socials-title {
+    opacity: 0.75;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.portfolio-social-icon-footer {
+    vertical-align: middle;
+    width: 1.5rem;
+}
+
+.portfolio-socials-footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.portfolio-social-link-footer {
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+#portfolio-copy-footer {
+    text-transform: uppercase;
+    padding-top: 1rem;
+    opacity: 0.5;
+    font-weight: bold;
+}
