@@ -11,13 +11,40 @@
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
+
         <div id="portfolio-header">
             <a href="index.html">
                 <img id="portfolio-logo" src="/static/assets/logo.jpg" alt="Portfolio logo">
             </a>
         </div>
 
-        <main id="app" role="main">
+        <!--<template id="portfolio-header-template">
+            <div id="portfolio-header">
+                <a href="index.html">
+                    <img id="portfolio-logo" src="/static/assets/logo.jpg" alt="Portfolio logo">
+                </a>
+            </div>
+        </template>-->
+
+        <div id="portfolio-about-container">
+            <div id="portfolio-name">Maxime Gerardin</div>
+            <div id="portfolio-description">
+                3D and Environment freelance artist based in south of France, creating immersive visuals for personal projects and brands.
+            </div>
+            <div id="portfolio-socials">
+                <a href="#">
+                    <img class="portfolio-social-icon" src="/static/assets/icons/artstation.svg" alt="artstation icon">
+                </a>
+                <a href="#">
+                    <img class="portfolio-social-icon" src="/static/assets/icons/instagram.svg" alt="instagram icon">
+                </a>
+                <a href="#">
+                    <img class="portfolio-social-icon" src="/static/assets/icons/linkedin.svg" alt="linkedin icon">
+                </a>
+            </div>
+        </div>
+
+        <!--<template id="portfolio-about-container-template">
             <div id="portfolio-about-container">
                 <div id="portfolio-name">Maxime Gerardin</div>
                 <div id="portfolio-description">
@@ -25,89 +52,145 @@
                 </div>
                 <div id="portfolio-socials">
                     <a href="#">
-                        <img class="portfolio-social-icon" src="/static/assets/socials/artstation.svg" alt="artstation icon">
+                        <img class="portfolio-social-icon" src="/static/assets/icons/artstation.svg" alt="artstation icon">
                     </a>
                     <a href="#">
-                        <img class="portfolio-social-icon" src="/static/assets/socials/instagram.svg" alt="instagram icon">
+                        <img class="portfolio-social-icon" src="/static/assets/icons/instagram.svg" alt="instagram icon">
                     </a>
                     <a href="#">
-                        <img class="portfolio-social-icon" src="/static/assets/socials/linkedin.svg" alt="linkedin icon">
+                        <img class="portfolio-social-icon" src="/static/assets/icons/linkedin.svg" alt="linkedin icon">
                     </a>
                 </div>
             </div>
+        </template>-->
 
-            <div id="works-container">
-                <div id="works">
-                    <div class="work">
-                        <a class="portfolio-work-link" href="#">
-                            <video class="work-thumbnail" autoplay loop muted>
-                                <source src="./static/assets/thumbnails/valorant.mp4" type="video/mp4" />
-                            </video>
-                        </a>
-                        <div class="work-text work-title">Valorant</div>
-                        <div class="work-text work-tag">3D</div>
-                    </div>
+        <template id="portfolio-work-template">
+            <a class="portfolio-work-link" href="#">
+                <video class="work-thumbnail" autoplay loop muted>
+                    <source src="./static/assets/thumbnails/valorant.mp4" type="video/mp4" />
+                </video>
+            </a>
+            <div class="work-text work-title transparent">Valorant</div>
+            <div class="work-text work-tag transparent">3D</div>
+        </template>
 
-                    <div class="work">
-                        <a class="portfolio-work-link" href="#">
-                            <video class="work-thumbnail" autoplay loop muted>
-                                <source src="./static/assets/thumbnails/secret-lab.mp4" type="video/mp4" />
-                            </video>
-                        </a>
-                        <div class="work-text work-title">Secret lab</div>
-                        <div class="work-text work-tag">3D</div>
-                    </div>
+        <div id="works-container">
+            <div id="works">
+                <div class="work">
+                    <a class="portfolio-work-link" href="#">
+                        <video class="work-thumbnail" autoplay loop muted>
+                            <source src="./static/assets/thumbnails/valorant.mp4" type="video/mp4" />
+                        </video>
+                    </a>
+                    <div class="work-text work-title transparent">Valorant</div>
+                    <div class="work-text work-tag transparent">3D</div>
+                </div>
 
-                    <div class="work">
-                        <a class="portfolio-work-link" href="#">
-                            <video class="work-thumbnail" autoplay loop muted>
-                                <source src="./static/assets/thumbnails/island.mp4" type="video/mp4" />
-                            </video>
-                        </a>
-                        <div class="work-text work-title">Island</div>
-                        <div class="work-text work-tag">Environment</div>
-                    </div>
+                <div class="work">
+                    <a class="portfolio-work-link" href="#">
+                        <video class="work-thumbnail" autoplay loop muted>
+                            <source src="./static/assets/thumbnails/secret-lab.mp4" type="video/mp4" />
+                        </video>
+                    </a>
+                    <div class="work-text work-title transparent">Secret lab</div>
+                    <div class="work-text work-tag transparent">3D</div>
+                </div>
 
-                    <div class="work">
-                        <a class="portfolio-work-link" href="#">
-                            <video class="work-thumbnail" autoplay loop muted>
-                                <source src="./static/assets/thumbnails/horse.mp4" type="video/mp4" />
-                            </video>
-                        </a>
-                        <div class="work-text work-title">Horse</div>
-                        <div class="work-text work-tag">Animation</div>
-                    </div>
+                <div class="work">
+                    <a class="portfolio-work-link" href="#">
+                        <video class="work-thumbnail" autoplay loop muted>
+                            <source src="./static/assets/thumbnails/island.mp4" type="video/mp4" />
+                        </video>
+                    </a>
+                    <div class="work-text work-title transparent">Island</div>
+                    <div class="work-text work-tag transparent">Environment</div>
+                </div>
 
+                <div class="work">
+                    <a class="portfolio-work-link" href="#">
+                        <video class="work-thumbnail" autoplay loop muted>
+                            <source src="./static/assets/thumbnails/horse.mp4" type="video/mp4" />
+                        </video>
+                    </a>
+                    <div class="work-text work-title transparent">Horse</div>
+                    <div class="work-text work-tag transparent">Animation</div>
                 </div>
             </div>
-        </main>
+        </div>
 
         <hr>
 
         <footer>
-            <div id="portfolio-socials-title">Socials</div>
-            <div class="portfolio-socials-footer">
-                <a href="#">
-                    <div class="portfolio-social-link-footer">
-                        <img class="portfolio-social-icon-footer" src="/static/assets/socials/artstation.svg" alt="artstation icon">
-                        <div>Artstation</div>
+            <div id="footer-portfolio-name">Maxime Gerardin</div>
+            <div class="footer-section">
+                <div class="footer-section-title">Contact</div>
+                <div class="footer-section-list">
+                    <div class="footer-section-item">
+                        <img class="footer-section-item-icon" src="/static/assets/icons/location.svg" alt="location icon">
+                        <div class="footer-section-item-text">South of france</div>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="portfolio-social-link-footer">
-                        <img class="portfolio-social-icon-footer" src="/static/assets/socials/instagram.svg" alt="Instagram icon">
-                        <div>Instagram</div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="portfolio-social-link-footer">
-                        <img class="portfolio-social-icon-footer" src="/static/assets/socials/linkedin.svg" alt="Linkedin icon">
-                        <div>Linkedin</div>
-                    </div>
-                </a>
+                    <a href=mailto:maximegerardincontact@gmail.com">
+                        <div class="footer-section-item">
+                            <img class="footer-section-item-icon" src="/static/assets/icons/mail.svg" alt="mail icon">
+                            <div class="footer-section-item-text">maximegerardincontact@gmail.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-section-title">Socials</div>
+                <div class="footer-section-list">
+                    <a href="#">
+                        <div class="footer-section-item">
+                            <img class="footer-section-item-icon" src="/static/assets/icons/artstation.svg" alt="artstation icon">
+                            <div class="footer-section-item-text">Artstation</div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="footer-section-item">
+                            <img class="footer-section-item-icon" src="/static/assets/icons/instagram.svg" alt="Instagram icon">
+                            <div class="footer-section-item-text">Instagram</div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="footer-section-item">
+                            <img class="footer-section-item-icon" src="/static/assets/icons/linkedin.svg" alt="Linkedin icon">
+                            <div class="footer-section-item-text">Linkedin</div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div id="portfolio-copy-footer">&copy; Maxime Gerardin <span id="portfolio-copy-year-footer">2025</span></div>
         </footer>
+
+        <template id="footer-section-template">
+            <div class="footer-section">
+                <div class="footer-section-title">Contact</div>
+                <div class="footer-section-list">
+                    <div class="footer-section-item">
+                        <img class="footer-section-item-icon" src="/static/assets/icons/location.svg" alt="location icon">
+                        <div class="footer-section-item-text">South of france</div>
+                    </div>
+                    <a href=mailto:maximegerardincontact@gmail.com">
+                        <div class="footer-section-item">
+                            <img class="footer-section-item-icon" src="/static/assets/icons/mail.svg" alt="mail icon">
+                            <div class="footer-section-item-text">maximegerardincontact@gmail.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </template>
+
+        <template id="footer-section-item-template">
+            <div class="footer-section-item">
+                <img class="footer-section-item-icon" src="" alt="">
+                <div class="footer-section-item-text"></div>
+            </div>
+        </template>
+
+        <template id="footer-section-item-link-template">
+            <a class="footer-section-item-link" href=""></a>
+        </template>
 
         <script src="/static/js/config.js" defer></script>
         <script src="/static/js/main.js" defer></script>

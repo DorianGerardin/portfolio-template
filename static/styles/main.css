@@ -1,3 +1,13 @@
+:root {
+    --bg-color: black;
+    --text-color: whitesmoke;
+    --default-font-size: 16px;
+    --section-margin: 4rem;
+    --less-opacity: .75;
+    --side-margin: 1rem;
+    --work-brightness: .5;
+}
+
 * {
     margin:0;
     line-height:normal;
@@ -12,10 +22,11 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    color : whitesmoke;
-    font-size: 16px;
-    background-color: black;
+    color : var(--text-color);
+    font-size: var(--default-font-size);
+    background-color: var(--bg-color);
     font-family: "Outfit", sans-serif;
+    scroll-behavior: smooth;
 }
 
 .hidden {
@@ -26,10 +37,16 @@ body {
     visibility: visible;
 }
 
+.opaque {
+    opacity: 1;
+}
+
+.transparent {
+    opacity: 0;
+}
+
 hr {
-    /*border: none;
-    border-top: 1px solid #ccc;*/
-    margin: 0 1rem;
+    margin: 0 var(--side-margin);
     opacity: 0.5;
 }
 
@@ -70,7 +87,9 @@ hr {
     display: flex;
     justify-content: center;
     width: 100vw;
-    margin-bottom: 4rem;
+    margin-bottom: var(--section-margin);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 #works {
@@ -81,9 +100,17 @@ hr {
 }
 
 .work {
+    opacity: 0;
     display: flex;
     position: relative;
     width: 100%;
+    filter: brightness(var(--work-brightness));
+    transition: opacity 1s, filter 0.25s;
+    scroll-snap-align: start;
+}
+
+.work.visible {
+    opacity: 1;
 }
 
 .portfolio-work-link {
@@ -94,7 +121,8 @@ hr {
     position: absolute;
     top: 0.5rem;
     font-weight: bold;
-    text-shadow: 1px 1px 0 black
+    text-shadow: 1px 1px 0 black;
+    transition: opacity 0.5s;
 }
 
 .work-title {
@@ -103,7 +131,6 @@ hr {
 
 .work-tag {
     right: 0.5rem;
-    opacity: 0.75;
 }
 
 .work-thumbnail {
@@ -114,30 +141,43 @@ hr {
 footer {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
-    padding: 4rem 1rem;
+    row-gap: 2rem;
+    padding: 2rem var(--side-margin);
 }
 
-#portfolio-socials-title {
-    opacity: 0.75;
+#footer-portfolio-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.footer-section-title {
+    opacity: var(--less-opacity);
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.portfolio-social-icon-footer {
+.footer-section-item-icon {
     vertical-align: middle;
     width: 1.5rem;
 }
 
-.portfolio-socials-footer {
+.footer-section-list {
     display: flex;
     flex-direction: column;
-    row-gap: 0.5rem;
+    row-gap: 0.75rem;
 }
 
-.portfolio-social-link-footer {
+.footer-section-item {
     display: flex;
-    column-gap: 0.5rem;
+    column-gap: 0.75rem;
+    align-items: center;
 }
 
 #portfolio-copy-footer {
