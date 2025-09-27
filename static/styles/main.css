@@ -5,7 +5,7 @@
     --section-margin: 4rem;
     --less-opacity: .75;
     --side-margin: 1rem;
-    --work-brightness: .5;
+    --project-brightness: .4;
 }
 
 * {
@@ -18,14 +18,17 @@ a {
     text-decoration : none;
 }
 
+html {
+    font-size: var(--default-font-size);
+}
+
 body {
     display: flex;
     flex-direction: column;
     width: 100%;
     color : var(--text-color);
-    font-size: var(--default-font-size);
     background-color: var(--bg-color);
-    font-family: "Outfit", sans-serif;
+    font-family: sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -57,7 +60,6 @@ hr {
 #portfolio-logo {
     display: block;
     width: 4rem;
-    border-radius: 50%;
 }
 
 #portfolio-about-container {
@@ -74,16 +76,18 @@ hr {
 
 #portfolio-socials {
     display: flex;
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     padding-top: 1rem;
+    flex-wrap: wrap;
+    row-gap: 1rem;
 }
 
 .portfolio-social-icon {
     vertical-align: middle;
-    width: 2rem;
+    width: 1.5em;
 }
 
-#works-container {
+#projects-container {
     display: flex;
     justify-content: center;
     width: 100vw;
@@ -92,48 +96,48 @@ hr {
     scroll-snap-type: y mandatory;
 }
 
-#works {
+#projects {
     display: flex;
     flex-direction: column;
     width: 100%;
     row-gap: 0.5em;
 }
 
-.work {
+.portfolio-project {
     opacity: 0;
     display: flex;
     position: relative;
     width: 100%;
-    filter: brightness(var(--work-brightness));
-    transition: opacity 1s, filter 0.25s;
+    filter: brightness(var(--project-brightness));
+    transition: opacity 1s, filter 0.35s;
     scroll-snap-align: start;
 }
 
-.work.visible {
+.portfolio-project.visible {
     opacity: 1;
 }
 
-.portfolio-work-link {
+.portfolio-project-link {
     width: 100%;
 }
 
-.work-text {
+.project-text {
     position: absolute;
     top: 0.5rem;
     font-weight: bold;
     text-shadow: 1px 1px 0 black;
-    transition: opacity 0.5s;
+    transition: opacity 0.75s;
 }
 
-.work-title {
+.project-title {
     left: 0.5rem;
 }
 
-.work-tag {
+.project-tag {
     right: 0.5rem;
 }
 
-.work-thumbnail {
+.portfolio-project-thumbnail {
     width: 100%;
     filter: brightness(1);
 }
