@@ -1,0 +1,84 @@
+:root {
+    --project-brightness: .4;
+    --projects-padding: 0.5em;
+}
+
+#portfolio-about-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    padding: 8rem 2rem;
+}
+
+#portfolio-name{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#portfolio-socials {
+    display: flex;
+    column-gap: 1.5rem;
+    padding-top: 1rem;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+
+.portfolio-social-icon {
+    vertical-align: middle;
+    width: 1.5em;
+}
+
+#projects-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: var(--section-margin);
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: var(--projects-padding);
+    padding: 0 var(--projects-padding);
+}
+
+.portfolio-project {
+    opacity: 0;
+    display: flex;
+    position: relative;
+    width: 100%;
+    filter: brightness(var(--project-brightness));
+    transition: opacity 1s, filter 0.35s;
+}
+
+.portfolio-project.visible {
+    opacity: 1;
+}
+
+.portfolio-project-link {
+    width: 100%;
+    line-height: 0
+}
+
+.project-text {
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 black;
+    transition: opacity 0.25s;
+}
+
+.project-title {
+    left: 0.5rem;
+}
+
+.project-tag {
+    right: 0.5rem;
+}
+
+.portfolio-project-thumbnail {
+    width: 100%;
+    filter: brightness(1);
+}

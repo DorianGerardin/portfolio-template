@@ -2,19 +2,21 @@ const style = getComputedStyle(document.documentElement);
 
 let visibles = new Set();
 let ticking = false;
-
 let observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             visibles.add(entry.target);
+            console.log("add")
         } else {
             visibles.delete(entry.target);
         }
     });
-}, { threshold: 1 });
+}, { threshold: 0 });
 
+// =====================================================================
+// =====================================================================
 
-function highlightMostCentered() {
+function highlightProject() {
     let center = window.innerHeight / 2;
     let closest = null;
     let closestDistance = Infinity;
@@ -24,7 +26,6 @@ function highlightMostCentered() {
         let rect = card.getBoundingClientRect();
         let cardCenter = rect.top + rect.height / 2;
         let distance = Math.abs(center - cardCenter);
-
         if (distance < closestDistance) {
             closestDistance = distance;
             closest = card;
@@ -48,9 +49,13 @@ function highlightMostCentered() {
     ticking = false;
 }
 
+// =====================================================================
+// =====================================================================
+
 window.addEventListener("scroll", () => {
     if (!ticking) {
-        requestAnimationFrame(highlightMostCentered);
+        console.log('scroll')
+        requestAnimationFrame(highlightProject);
         ticking = true;
     }
 });
@@ -59,7 +64,7 @@ window.addEventListener("scroll", () => {
 
 
 
-let sections = [];
+/*let sections = [];
 let index = 0;
 let isScrolling = false;
 
@@ -106,52 +111,7 @@ window.addEventListener("wheel", (e) => {
         isScrolling = false;
         unlockScroll()
     }, 300);
-});
-
-
-function loadFonts(...fonts) {
-    const display = 'swap';
-
-    const families = fonts.map(font => {
-        if (typeof font === 'object' && font.name) {
-            const name = font.name.replace(/ /g, '+');
-            return font.weights
-                ? `${name}:wght@${font.weights}`
-                : name;
-        }
-        return font.replace(/ /g, '+');
-    }).join('&family=');
-
-    const url = `https://fonts.googleapis.com/css2?family=${families}&display=${display}`;
-    const link = document.createElement('link');
-    link.rel = 'stylesheet'; link.href = url;
-    document.head.appendChild(link);
-}
-
-
-function slugify(text) {
-    return text.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-}
-
-function hasNonEmptyString(obj) {
-    return Object.values(obj).some(value => {
-        if (typeof value === "string") return value.trim() !== "";
-        if (typeof value === "object" && value !== null) return hasNonEmptyString(value);
-        return false;
-    });
-}
-
-function fillHeader()
-{
-    let portfolioLogo = document.getElementById("portfolio-logo");
-    if("info" in portfolioTemplate) {
-        portfolioLogo.src = portfolioTemplate.info.logo;
-        portfolioLogo.alt = portfolioTemplate.info.logoAlt;
-        if (portfolioTemplate.info.logoCircle) {
-            portfolioLogo.style.borderRadius = "50%";
-        }
-    }
-}
+});*/
 
 function fillAbout()
 {
@@ -160,6 +120,7 @@ function fillAbout()
         let portfolioDescription = document.getElementById("portfolio-description");
 
         portfolioName.innerText = portfolioTemplate.info.fullName
+        document.querySelector("title").innerText = portfolioTemplate.info.fullName;
         portfolioDescription.innerText = portfolioTemplate.info.personalDescription
     }
     if("socials" in portfolioTemplate) {
@@ -176,6 +137,9 @@ function fillAbout()
     }
 }
 
+// =====================================================================
+// =====================================================================
+
 function fillProjects ()
 {
     if("projects" in portfolioTemplate) {
@@ -189,13 +153,12 @@ function fillProjects ()
             let projectTitle = projectClone.querySelector(".project-title")
             let projectTag = projectClone.querySelector(".project-tag")
 
-            projectLink.href = `/project.html#${slugify(project.name)}`
+            projectLink.href = `./project.html#${slugify(project.name)}`
             projectThumbnail.src = project.videoThumbnail
-            projectThumbnail.type = `video${project.videoThumbnailExt}`
             projectTitle.innerText = project.name
             projectTag.innerText = project.types?.[0]
             observer.observe(projectElement);
-            sections.push(projectElement);
+            //sections.push(projectElement);
             projectsNode.appendChild(projectClone)
             requestAnimationFrame(() => {
                 projectElement.style.opacity = "1";
@@ -204,52 +167,8 @@ function fillProjects ()
     }
 }
 
-function fillFooterSection(sectionID, templateObj){
-    let footerSectionContact = document.getElementById(sectionID)
-    if (hasNonEmptyString(templateObj))
-    {
-        templateObj.forEach(obj => {
-            if (hasNonEmptyString(obj)) {
-                let footerItemTemplate
-                let footerItemClone
-                if(obj.url !== "") {
-                    footerItemTemplate = document.getElementById("footer-section-item-link-template");
-                    footerItemClone = footerItemTemplate.content.cloneNode(true);
-                    let footerItemLink = footerItemClone.querySelector(".footer-section-item-link")
-                    footerItemLink.href = obj.url
-                }
-                else {
-                    footerItemTemplate = document.getElementById("footer-section-item-template");
-                    footerItemClone = footerItemTemplate.content.cloneNode(true);
-                }
-                let footerItemIcon = footerItemClone.querySelector(".footer-section-item-icon")
-                let footerItemText = footerItemClone.querySelector(".footer-section-item-text")
-                footerItemIcon.src = obj.icon
-                footerItemText.innerText = obj.text
-                footerSectionContact.querySelector(".footer-section-list").appendChild(footerItemClone)
-            }
-        })
-    }
-    else {
-        footerSectionContact.style.display = "none";
-    }
-}
-
-function fillFooter() {
-
-    if("footer" in portfolioTemplate) {
-        let footerName = document.getElementById("footer-portfolio-name");
-        let footerCopyName = document.getElementById("portfolio-copy-footer-name");
-        let footerCopyYear = document.getElementById("portfolio-copy-year-footer");
-        footerName.innerText = portfolioTemplate.info.fullName
-        footerCopyName.innerText = ` ${portfolioTemplate.info.fullName}`
-        footerCopyYear.textContent = new Date().getFullYear().toString()
-
-        fillFooterSection("footer-section-contact", portfolioTemplate.footer.contact)
-        fillFooterSection("footer-section-socials", portfolioTemplate.socials)
-    }
-}
-
+// =====================================================================
+// =====================================================================
 
 function fillPortfolioInfo() {
     fillHeader()
@@ -258,21 +177,10 @@ function fillPortfolioInfo() {
     fillFooter()
 }
 
-function applyConfigFonts()
-{
-    loadFonts(styleConfig.portfolioFont, styleConfig.fullNameFont);
-    document.querySelectorAll(".full-name").forEach(el => {
-        el.style.fontFamily = styleConfig.fullNameFont.name;
-        el.style.fontWeight = styleConfig.fullNameFont?.useWeight ?? 'normal';
-    })
-    document.body.style.fontFamily = styleConfig.portfolioFont.name;
-    document.body.style.fontWeight = styleConfig.portfolioFont?.useWeight ?? 'normal';
+
+function main() {
+    fillPortfolioInfo()
+    applyConfigStyles()
 }
 
-function applyConfigStyle()
-{
-    applyConfigFonts()
-}
-
-fillPortfolioInfo()
-applyConfigStyle()
+main()
