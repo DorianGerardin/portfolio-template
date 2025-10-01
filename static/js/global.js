@@ -38,6 +38,18 @@ function hasNonEmptyString(configObj) {
 // =====================================================================
 // =====================================================================
 
+function showOrHide(obj, key, element) {
+    const value = obj?.[key];
+    if (value === null || value === undefined || value === "") {
+      element.style.display = "none";
+    } else {
+      element.innerText = value;
+    }
+  }
+
+// =====================================================================
+// =====================================================================
+
 function applyConfigFonts()
 {
     loadFonts(styleConfig.portfolioFont, styleConfig.fullNameFont);

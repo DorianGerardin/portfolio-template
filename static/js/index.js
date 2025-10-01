@@ -156,7 +156,7 @@ function fillProjects ()
             projectLink.href = `./project.html#${slugify(project.name)}`
             projectThumbnail.src = project.videoThumbnail
             projectTitle.innerText = project.name
-            projectTag.innerText = project.types?.[0]
+            projectTag.innerText = project.tags?.[0]
             observer.observe(projectElement);
             //sections.push(projectElement);
             projectsNode.appendChild(projectClone)

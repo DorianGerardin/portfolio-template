@@ -37,51 +37,63 @@ portfolioTemplate = {
         {
             name: "Valorant",
             videoThumbnail: "./static/assets/thumbnails/valorant.mp4",
-            types: ["3D", "Animation"],
+            tags: ["3D", "Animation"],
             year: "2024",
             description: "blabla",
             client: "Riot Games",
-            additionalMedias: [],
-            additionalLinks: [],
+            links: [],
+            medias: [],
         },
         {
             name: "Island",
             videoThumbnail: "./static/assets/thumbnails/island.mp4",
-            types: ["3D", "Animation"],
+            tags: ["3D", "Animation"],
             year: "2024",
             description: "blabla",
             client: "",
-            additionalMedias: [],
-            additionalLinks: [],
+            links: [],
+            medias: [],
         },
         {
-            name: "Secret Lab",
+            name: "Secret Lab Basement",
             videoThumbnail: "./static/assets/thumbnails/secret-lab.mp4",
-            types: ["3D", "Animation"],
-            year: "2024",
+            tags: ["3D", "Animation"],
+            year: "2025",
             description: "blabla",
-            client: "Riot Games",
-            additionalMedias: [],
-            additionalLinks: [
+            client: "",
+            links: [
                 {
-                    url: "https://www.secret-labs.com",
-                    text: "Secret Labs",
+                    url: "https://www.artstation.com/artwork/mAn3De",
+                    text: "View in ArtStation",
+                }
+            ],
+            medias: [
+                {
+                    src: "./static/assets/thumbnails/secret-lab.mp4",
+                    type: "video",
+                    controls: true,
                 },
                 {
-                    url: "https://www.secret-labs.com",
-                    text: "ArtStation",
+                    src: "https://cdna.artstation.com/p/assets/images/images/086/990/224/large/maxime-gerardin-image.jpg?1744627988",
+                    type: "img",
+                    text: "Final Render + Color grade"
+                },
+                {
+                    src: "https://cdnb.artstation.com/p/assets/images/images/086/990/203/large/maxime-gerardin-image.jpg?1744627903",
+                    type: "img",
+                    text: "Viewport Screenshot in Rendered View"
                 },
             ],
         },
         {
             name: "Horse",
             videoThumbnail: "./static/assets/thumbnails/horse.mp4",
-            types: ["3D", "Animation"],
+            tags: ["3D", "Animation"],
             year: "2024",
             description: "blabla",
             client: "Riot Games",
-            additionalMedias: [],
-            additionalLinks: [],
+            links: [],
+            medias: [],
         }
     ],
     footer: {
