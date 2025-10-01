@@ -3,6 +3,11 @@
     --projects-padding: 0.5em;
 }
 
+#logo-link {
+    display: block;
+    width: fit-content;
+}
+
 #portfolio-about-container {
     display: flex;
     flex-direction: column;

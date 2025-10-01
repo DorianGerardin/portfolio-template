@@ -59,6 +59,49 @@ function createProjectLinksContainerHTML(project) {
 // =====================================================================
 // =====================================================================
 
+function createMediasGridLayout(project, projectMedias)
+{
+    const mediasByGridLine = project.medias.reduce((acc, item) => {
+        if (item.gridLine !== undefined) {
+            const key = item.gridLine;
+            if (!acc[key]) {
+                acc[key] = [];
+            }
+            acc[key].push(item);
+        } else {
+            const existingKeys = Object.keys(acc).map(Number);
+            const nextKey = existingKeys.length > 0 ? Math.max(...existingKeys) + 1 : 1;
+            acc[nextKey] = [item];
+        }
+        return acc;
+    }, {}); // Group medias by gridLine
+
+    const maxElements = Math.max(...Object.values(mediasByGridLine).map(arr => arr.length));
+
+    // Create medias elements and apply grid layout
+    projectMedias.style.gridTemplateColumns = `repeat(${maxElements}, 1fr)`;
+    Object.entries(mediasByGridLine).forEach(([gridLine, medias]) => {
+        medias.forEach(media => {
+            let projectMediaTemplateID = media.type === "video" ? "project-video-media-template" : "project-img-media-template";
+            let projectMediaClone = document.getElementById(projectMediaTemplateID).content.cloneNode(true);
+            let projectMediaContainer = projectMediaClone.querySelector(".project-media-container")
+            if (medias.length === 1) {
+                projectMediaContainer.style.gridColumn = "1 / -1";
+            }
+
+            let projectMedia = projectMediaClone.querySelector(".project-media")
+            projectMedia.src = media.src
+            showOrHide(media, "text", projectMediaClone.querySelector(".project-media-text"))
+
+            if (media.type === "video") projectMedia.controls = media.controls ?? false
+            projectMedias.appendChild(projectMediaClone)
+        })
+    })
+}
+
+// =====================================================================
+// =====================================================================
+
 function fillProjectInfo() {
     let project = getProjectByHash()
 
@@ -80,20 +123,8 @@ function fillProjectInfo() {
 
         let projectMedias = document.getElementById("project-medias");
         if(project.medias.length !== 0)
-        {   
-            project.medias.forEach(media => {
-                let projectMediaTemplateID = media.type === "video" ? "project-video-media-template" : "project-img-media-template";
-                let projectMediaClone = document.getElementById(projectMediaTemplateID).content.cloneNode(true);
-                let projectMedia = projectMediaClone.querySelector(".project-media")
-                projectMedia.src = media.src
-                showOrHide(media, "text", projectMediaClone.querySelector(".project-media-text"))
-
-                if (media.type === "video")
-                {
-                    projectMedia.controls = media.controls ?? false
-                }
-                projectMedias.appendChild(projectMediaClone)
-            })
+        {
+            createMediasGridLayout(project, projectMedias)
         }
         else 
         {

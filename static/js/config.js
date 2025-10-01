@@ -72,17 +72,25 @@ portfolioTemplate = {
                     src: "./static/assets/thumbnails/secret-lab.mp4",
                     type: "video",
                     controls: true,
+                    gridLine: 1,
                 },
                 {
                     src: "https://cdna.artstation.com/p/assets/images/images/086/990/224/large/maxime-gerardin-image.jpg?1744627988",
                     type: "img",
-                    text: "Final Render + Color grade"
+                    text: "Final Render + Color grade",
+                    gridLine: 2,
                 },
                 {
                     src: "https://cdnb.artstation.com/p/assets/images/images/086/990/203/large/maxime-gerardin-image.jpg?1744627903",
                     type: "img",
-                    text: "Viewport Screenshot in Rendered View"
+                    text: "Viewport Screenshot in Rendered View",
+                    gridLine: 2,
                 },
+                {
+                    src: "https://cdnb.artstation.com/p/assets/images/images/086/990/203/large/maxime-gerardin-image.jpg?1744627903",
+                    type: "img",
+                    text: ""
+                }
             ],
         },
         {
