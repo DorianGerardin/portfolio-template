@@ -75,14 +75,14 @@ portfolioTemplate = {
                     gridLine: 1,
                 },
                 {
-                    src: "https://cdna.artstation.com/p/assets/images/images/086/990/224/large/maxime-gerardin-image.jpg?1744627988",
-                    type: "img",
+                    src: "https://framerusercontent.com/assets/jklECn1OqCKIKKelkdXZ97epAnI.mp4",
+                    type: "video",
                     text: "Final Render + Color grade",
                     gridLine: 2,
                 },
                 {
-                    src: "https://cdnb.artstation.com/p/assets/images/images/086/990/203/large/maxime-gerardin-image.jpg?1744627903",
-                    type: "img",
+                    src: "https://framerusercontent.com/assets/jklECn1OqCKIKKelkdXZ97epAnI.mp4",
+                    type: "video",
                     text: "Viewport Screenshot in Rendered View",
                     gridLine: 2,
                 },

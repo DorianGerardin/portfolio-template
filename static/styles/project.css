@@ -3,6 +3,22 @@
     --grey-text-opacity: 0.5;
 }
 
+#back-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    line-height: 0;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    background-color: var(--bg-color);
+    border: solid 2px rgba(128, 128, 128, 0.4);
+    z-index: 1;
+}
+
+#back-button-img {
+    width: 2rem;
+}
+
 #project-container {
     display: flex;
     row-gap: 0.5rem;
