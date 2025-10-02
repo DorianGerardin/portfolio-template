@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
+        <link rel="icon" type="image/png" href="">
         <link rel="stylesheet" href="./static/styles/global.css">
         <link rel="stylesheet" href="./static/styles/index.css">
         <meta name="description" content="Portfolio">
@@ -12,54 +13,63 @@
     </head>
     <body>
 
-        <div id="portfolio-header">
-            <a id="logo-link" href="index.html">
-                <img id="portfolio-logo" src="" alt="">
-            </a>
+        <div id="loading-container">
+            <img id="loading-img" src="" alt="">
         </div>
 
-        <template id="portfolio-social-template">
-            <a class="portfolio-social-link" href="">
-                <img class="portfolio-social-icon" src="" alt="">
-            </a>
-        </template>
-
-        <div id="portfolio-about-container">
-            <div id="portfolio-name" class="full-name"></div>
-            <div id="portfolio-description"></div>
-            <div id="portfolio-socials"></div>
-        </div>
-
-        <template id="portfolio-project-template">
-            <div class="portfolio-project">
-                <a class="portfolio-project-link" href="#">
-                    <video class="portfolio-project-thumbnail" autoplay loop muted>
-                        <source src="" type="" />
-                    </video>
+        <div id="page-container" class="transparent">
+            <div id="portfolio-header">
+                <a id="logo-link" href="index.html">
+                    <img id="portfolio-logo" src="" alt="">
                 </a>
-                <div class="project-text project-title transparent"></div>
-                <div class="project-text project-tag transparent"></div>
             </div>
-        </template>
 
-        <div id="projects-container">
-            <div id="projects"></div>
+            <template id="portfolio-social-template">
+                <a class="portfolio-social-link" href="">
+                    <img class="portfolio-social-icon" src="" alt="">
+                </a>
+            </template>
+
+            <div id="portfolio-about-container" class="transparent">
+                <div id="portfolio-name" class="full-name"></div>
+                <div id="portfolio-description"></div>
+                <div id="portfolio-socials"></div>
+            </div>
+
+            <template id="portfolio-project-template">
+                <div class="portfolio-project">
+                    <a class="portfolio-project-link" href="#">
+                        <video class="portfolio-project-thumbnail" autoplay loop muted>
+                            <source src="" type="" />
+                        </video>
+                    </a>
+                    <div class="project-text project-title transparent"></div>
+                    <div class="project-text project-tag transparent"></div>
+                </div>
+            </template>
+
+            <div id="projects-container">
+                <div id="projects"></div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <div id="footer-info">
+                    <div id="footer-portfolio-name" class="full-name"></div>
+                    <div id="footer-section-contact" class="footer-section">
+                        <div class="footer-section-title">Contact</div>
+                        <div class="footer-section-list"></div>
+                    </div>
+                    <div id="footer-section-socials" class="footer-section">
+                        <div class="footer-section-title">Socials</div>
+                        <div class="footer-section-list"></div>
+                    </div>
+                </div>
+                <div id="portfolio-copy-footer">&copy;<span id="portfolio-copy-footer-name"></span> <span id="portfolio-copy-year-footer">2025</span></div>
+            </footer>
+
         </div>
-
-        <hr>
-
-        <footer>
-            <div id="footer-portfolio-name" class="full-name"></div>
-            <div id="footer-section-contact" class="footer-section">
-                <div class="footer-section-title">Contact</div>
-                <div class="footer-section-list"></div>
-            </div>
-            <div id="footer-section-socials" class="footer-section">
-                <div class="footer-section-title">Socials</div>
-                <div class="footer-section-list"></div>
-            </div>
-            <div id="portfolio-copy-footer">&copy;<span id="portfolio-copy-footer-name"></span> <span id="portfolio-copy-year-footer">2025</span></div>
-        </footer>
 
         <template id="footer-section-item-template">
             <div class="footer-section-item">

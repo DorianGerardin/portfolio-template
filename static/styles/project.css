@@ -11,8 +11,14 @@
     padding: 0.75rem;
     border-radius: 1rem;
     background-color: var(--bg-color);
-    border: solid 2px rgba(128, 128, 128, 0.4);
+    border: solid 2px var(--border-color);
     z-index: 1;
+    transition: scale 0.25s ease-in-out;
+}
+
+#back-button:hover {
+    cursor: pointer;
+    scale: 1.05;
 }
 
 #back-button-img {
@@ -54,7 +60,7 @@
 
 .project-board-row {
     padding: 0.5rem 0;
-    border-top: 1px solid rgba(128, 128, 128, 0.4);
+    border-top: 1px solid var(--border-color);
     display: flex;
     flex-direction: row;
     column-gap: 0.5rem;

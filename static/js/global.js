@@ -1,3 +1,10 @@
+function setLoadingIcon() {
+    document.getElementById("loading-img").src = portfolioTemplate.info.logo;
+}
+
+// =====================================================================
+// =====================================================================
+
 function loadFonts(...fonts) {
     const display = 'swap';
 
@@ -78,6 +85,8 @@ function fillHeader()
     if("info" in portfolioTemplate) {
         portfolioLogo.src = portfolioTemplate.info.logo;
         portfolioLogo.alt = portfolioTemplate.info.logoAlt;
+        document.querySelector("link[rel~='icon']").href = portfolioTemplate.info.logo
+        document.querySelector("title").innerText = portfolioTemplate.info.fullName;
         if (portfolioTemplate.info.logoCircle) {
             portfolioLogo.style.borderRadius = "50%";
         }
@@ -135,3 +144,21 @@ function fillFooter() {
         fillFooterSection("footer-section-socials", portfolioTemplate.socials)
     }
 }
+
+// =====================================================================
+// =====================================================================
+
+function displayPage(callback) {
+    setTimeout(() => {
+        let loadingContainer = document.getElementById("loading-container");
+        loadingContainer.style.display = "none";
+        let pageContainer = document.getElementById("page-container");
+        pageContainer.classList.remove("transparent", "hidden");
+        if(callback) {
+            callback()
+        }
+        document.getElementById("portfolio-logo").classList.add("scaled");
+    }, 300);
+}
+
+setLoadingIcon()

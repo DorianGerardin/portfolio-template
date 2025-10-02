@@ -138,11 +138,28 @@ function fillProjectInfo() {
 // =====================================================================
 // =====================================================================
 
-function main() {
+function setBackButton() {
+    document.getElementById("back-button").onclick = () => {
+        goToHome()
+    };
+}
+
+// =====================================================================
+// =====================================================================
+
+function main()
+{
+    setBackButton()
+
     fillHeader()
+
     fillProjectInfo()
+
     fillFooter()
+
     applyConfigStyles()
+
+    displayPage()
 }
 
 main()

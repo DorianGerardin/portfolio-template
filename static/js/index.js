@@ -120,7 +120,6 @@ function fillAbout()
         let portfolioDescription = document.getElementById("portfolio-description");
 
         portfolioName.innerText = portfolioTemplate.info.fullName
-        document.querySelector("title").innerText = portfolioTemplate.info.fullName;
         portfolioDescription.innerText = portfolioTemplate.info.personalDescription
     }
     if("socials" in portfolioTemplate) {
@@ -160,9 +159,6 @@ function fillProjects ()
             observer.observe(projectElement);
             //sections.push(projectElement);
             projectsNode.appendChild(projectClone)
-            requestAnimationFrame(() => {
-                projectElement.style.opacity = "1";
-            });
         })
     }
 }
@@ -171,16 +167,30 @@ function fillProjects ()
 // =====================================================================
 
 function fillPortfolioInfo() {
-    fillHeader()
     fillAbout()
     fillProjects()
-    fillFooter()
 }
 
+// =====================================================================
+// =====================================================================
 
 function main() {
+
+    fillHeader()
+
     fillPortfolioInfo()
+
+    fillFooter()
+
     applyConfigStyles()
+
+    displayPage(() => {
+        document.getElementById("portfolio-about-container").classList.replace("transparent", "opaque");
+        document.getElementById("projects-container").querySelectorAll(".portfolio-project")
+                                                              .forEach((project) => {
+            project.classList.add("scaled");
+        })
+    })
 }
 
 main()

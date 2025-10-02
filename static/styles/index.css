@@ -13,6 +13,12 @@
     flex-direction: column;
     row-gap: 0.5rem;
     padding: 8rem 2rem;
+    transform: translateX(-5rem);
+    transition: opacity 1.5s ease-out, transform 0.5s ease-out;
+}
+
+#portfolio-about-container.opaque {
+    transform: translateX(0);
 }
 
 #portfolio-name{
@@ -49,16 +55,16 @@
 }
 
 .portfolio-project {
-    opacity: 0;
+    scale: 0;
     display: flex;
     position: relative;
     width: 100%;
     filter: brightness(var(--project-brightness));
-    transition: opacity 1s, filter 0.35s;
+    transition: filter 0.35s, scale 0.5s ease-in-out;
 }
 
-.portfolio-project.visible {
-    opacity: 1;
+.portfolio-project.scaled {
+    scale: 1;
 }
 
 .portfolio-project-link {
@@ -86,4 +92,86 @@
 .portfolio-project-thumbnail {
     width: 100%;
     filter: brightness(1);
+}
+
+
+@media (min-width: 600px) and (max-width: 767px) {
+    #portfolio-name {
+        font-size: 2.5rem;
+    }
+    #portfolio-description {
+        font-size: 1.25rem;
+    }
+    .project-text {
+        font-size: 1.5rem;
+    }
+    .portfolio-social-icon {
+        width: 1.75rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #portfolio-name {
+        font-size: 2rem;
+    }
+    #portfolio-description {
+        font-size: 1.25rem;
+    }
+    .project-text {
+        font-size: 1.5rem;
+    }
+    .portfolio-social-icon {
+        width: 1.75rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    #portfolio-name {
+        font-size: 2rem;
+    }
+    #portfolio-description {
+        font-size: 1.25rem;
+    }
+    .project-text {
+        font-size: 1.5rem;
+    }
+    .portfolio-social-icon {
+        width: 1.75rem;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1599px) {
+    #portfolio-about-container {
+        padding: 7rem 5rem;
+    }
+    #portfolio-name {
+        font-size: 2rem;
+    }
+    #portfolio-description {
+        font-size: 1.25rem;
+    }
+    .project-text {
+        font-size: 1.5rem;
+    }
+    .portfolio-social-icon {
+        width: 1.75rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    #portfolio-about-container {
+        padding: 7rem 10rem;
+    }
+    #portfolio-name {
+        font-size: 2rem;
+    }
+    #portfolio-description {
+        font-size: 1.25rem;
+    }
+    .project-text {
+        font-size: 1.5rem;
+    }
+    .portfolio-social-icon {
+        width: 1.75rem;
+    }
 }

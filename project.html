@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Template - Application</title>
+    <title></title>
+    <link rel="icon" type="image/png" href="">
     <link rel="stylesheet" href="./static/styles/global.css">
     <link rel="stylesheet" href="./static/styles/project.css">
     <meta name="description" content="Portfolio">
@@ -11,64 +12,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
     <body>
-        
-        <div id="back-button">
-            <img id="back-button-img" src="./static/assets/icons/left-arrow.svg" alt="back arrow">
+
+        <div id="loading-container">
+            <img id="loading-img" src="" alt="">
         </div>
 
-        <div id="portfolio-header">
-            <a href="index.html">
-                <img id="portfolio-logo" src="" alt="">
-            </a>
+        <div id="page-container" class="transparent">
+
+            <div id="back-button">
+                <img id="back-button-img" src="./static/assets/icons/left-arrow.svg" alt="back arrow">
+            </div>
+
+            <div id="portfolio-header">
+                <a href="index.html">
+                    <img id="portfolio-logo" src="" alt="">
+                </a>
+            </div>
+
+            <template id="project-board-row-template">
+                <div class="project-board-row">
+                    <div class="project-board-row-title"></div>
+                    <div class="project-board-row-value"></div>
+                </div>
+            </template>
+
+            <template id="project-video-media-template">
+                <div class="project-media-container">
+                    <video class="project-media" autoplay loop muted src=""></video>
+                    <div class="project-media-text"></div>
+                </div>
+            </template>
+
+            <template id="project-img-media-template">
+                <div class="project-media-container">
+                    <img class="project-media" src="" alt="">
+                    <div class="project-media-text"></div>
+                </div>
+            </template>
+
+            <div id="project-container">
+                <div id="project-title"></div>
+                <video id="project-thumbnail" autoplay loop muted>
+                    <source src="" type="" />
+                </video>
+                <div id="project-board-container">
+                    <div id="project-board"></div>
+                </div>
+
+                <div id="project-medias"></div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <div id="footer-portfolio-name" class="full-name"></div>
+                <div id="footer-section-contact" class="footer-section">
+                    <div class="footer-section-title">Contact</div>
+                    <div class="footer-section-list"></div>
+                </div>
+                <div id="footer-section-socials" class="footer-section">
+                    <div class="footer-section-title">Socials</div>
+                    <div class="footer-section-list"></div>
+                </div>
+                <div id="portfolio-copy-footer">&copy;<span id="portfolio-copy-footer-name"></span> <span id="portfolio-copy-year-footer">2025</span></div>
+            </footer>
+
         </div>
-
-        <template id="project-board-row-template">
-            <div class="project-board-row">
-                <div class="project-board-row-title"></div>
-                <div class="project-board-row-value"></div>
-            </div>
-        </template>
-
-        <template id="project-video-media-template">
-            <div class="project-media-container">
-                <video class="project-media" autoplay loop muted src=""></video>
-                <div class="project-media-text"></div>
-            </div>
-        </template>
-
-        <template id="project-img-media-template">
-            <div class="project-media-container">
-                <img class="project-media" src="" alt="">
-                <div class="project-media-text"></div>
-            </div>
-        </template>
-
-        <div id="project-container">
-            <div id="project-title"></div>
-            <video id="project-thumbnail" autoplay loop muted>
-                <source src="" type="" />
-            </video>
-            <div id="project-board-container">
-                <div id="project-board"></div>
-            </div>
-
-            <div id="project-medias"></div>
-        </div>
-
-        <hr>
-
-        <footer>
-            <div id="footer-portfolio-name" class="full-name"></div>
-            <div id="footer-section-contact" class="footer-section">
-                <div class="footer-section-title">Contact</div>
-                <div class="footer-section-list"></div>
-            </div>
-            <div id="footer-section-socials" class="footer-section">
-                <div class="footer-section-title">Socials</div>
-                <div class="footer-section-list"></div>
-            </div>
-            <div id="portfolio-copy-footer">&copy;<span id="portfolio-copy-footer-name"></span> <span id="portfolio-copy-year-footer">2025</span></div>
-        </footer>
 
         <template id="footer-section-item-template">
             <div class="footer-section-item">
