@@ -11,7 +11,7 @@ let observer = new IntersectionObserver((entries) => {
             visibles.delete(entry.target);
         }
     });
-}, { threshold: 0 });
+}, { threshold: 0.5 });
 
 // =====================================================================
 // =====================================================================

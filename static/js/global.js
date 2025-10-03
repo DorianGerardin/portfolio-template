@@ -149,14 +149,20 @@ function fillFooter() {
 // =====================================================================
 
 function displayPage(callback) {
+    
+    if(portfolioTemplate.info.logoCircle) {
+        document.getElementById("loading-img").classList.add("circle")
+    }
+
     setTimeout(() => {
-        let loadingContainer = document.getElementById("loading-container");
-        loadingContainer.style.display = "none";
-        let pageContainer = document.getElementById("page-container");
-        pageContainer.classList.remove("transparent", "hidden");
+        document.getElementById("loading-container").style.display = "none";
+
+        document.getElementById("page-container").classList.remove("transparent", "hidden");
+
         if(callback) {
             callback()
         }
+
         document.getElementById("portfolio-logo").classList.add("scaled");
     }, 300);
 }
