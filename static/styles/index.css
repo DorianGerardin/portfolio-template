@@ -94,7 +94,7 @@
 .project-text {
     color: white;
     position: sticky;
-    top: 5rem;
+    top: 6rem;
     font-weight: bold;
     text-shadow: 1px 1px 0 black;
     transition: opacity 0.25s;
@@ -178,7 +178,7 @@
         width: 1.75rem;
     }
     .project-text-overlay {
-        padding: 1 1rem;
+        padding: 1rem 1rem;
     }
 }
 
@@ -202,7 +202,7 @@
         width: 1.75rem;
     }
     .project-text-overlay {
-        padding: 1 1rem;
+        padding: 1rem 1rem;
     }
 }
 
@@ -226,7 +226,7 @@
         width: 1.5rem;
     }
     .project-text-overlay {
-        padding: 1 1rem;
+        padding: 1rem 1rem;
     }
 }
 
@@ -250,7 +250,7 @@
         width: 1.75rem;
     }
     .project-text-overlay {
-        padding: 1 1rem;
+        padding: 1rem 1rem;
     }
 }
 
@@ -277,6 +277,6 @@
         width: 80%;
     }
     .project-text-overlay {
-        padding: 1 1rem;
+        padding: 1rem 1rem;
     }
 }

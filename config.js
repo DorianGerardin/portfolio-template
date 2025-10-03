@@ -35,21 +35,35 @@ portfolioTemplate = {
     ],
     projects: [
         {
-            name: "Valorant",
+            name: "Valorant - SUPERPOWER",
             videoThumbnail: "./static/assets/thumbnails/valorant.mp4",
-            tags: ["3D", "Animation"],
+            tags: ["3D", "Environments"],
             year: "2024",
-            description: "blabla",
+            description: "Valorant worlds championship video clip SUPERPOWER",
             client: "Riot Games",
-            links: [],
-            medias: [],
+            links: [
+                {
+                    url: "https://www.youtube.com/watch?v=DX4BE9GmpH4&list=RDDX4BE9GmpH4&start_radio=1",
+                    text: "View on Youtube"
+                }
+            ],
+            medias: [
+                {
+                    src: "./static/assets/medias/valorant_2.mp4",
+                    type: "video"
+                },
+                {
+                    src: "./static/assets/medias/valorant_3.mp4",
+                    type: "video"
+                }
+            ],
         },
         {
             name: "Island",
             videoThumbnail: "./static/assets/thumbnails/island.mp4",
-            tags: ["3D", "Animation"],
+            tags: ["3D", "Environments"],
             year: "2024",
-            description: "blabla",
+            description: "Island environment",
             client: "",
             links: [],
             medias: [],
@@ -59,7 +73,8 @@ portfolioTemplate = {
             videoThumbnail: "./static/assets/thumbnails/secret-lab.mp4",
             tags: ["3D", "Animation"],
             year: "2025",
-            description: "blabla",
+            description: "Hello, here's an 3D render made a year ago. " +
+                         "I originally just wanted to help my girlfriend on her 3D Assignment for her art school",
             client: "",
             links: [
                 {
@@ -75,32 +90,41 @@ portfolioTemplate = {
                     gridLine: 1,
                 },
                 {
-                    src: "https://framerusercontent.com/assets/jklECn1OqCKIKKelkdXZ97epAnI.mp4",
-                    type: "video",
-                    text: "Final Render + Color grade",
+                    src: "./static/assets/medias/secret-lab-2.jpg",
+                    type: "img",
+                    text: "Viewport Screenshot",
                     gridLine: 2,
                 },
                 {
-                    src: "https://framerusercontent.com/assets/jklECn1OqCKIKKelkdXZ97epAnI.mp4",
-                    type: "video",
+                    src: "./static/assets/medias/secret-lab-3.jpg",
+                    type: "img",
                     text: "Viewport Screenshot in Rendered View",
                     gridLine: 2,
                 },
                 {
-                    src: "https://cdnb.artstation.com/p/assets/images/images/086/990/203/large/maxime-gerardin-image.jpg?1744627903",
+                    src: "https://cdna.artstation.com/p/assets/images/images/086/911/290/large/maxime-gerardin-basement-grading-1-1-2-1-2-1.jpg?1744379618",
                     type: "img",
-                    text: ""
+                    text: "Final Render + Color grade"
                 }
             ],
         },
         {
-            name: "Horse",
+            name: "Frozen Bridge",
             videoThumbnail: "./static/assets/thumbnails/horse.mp4",
             tags: ["3D", "Animation"],
-            year: "2024",
-            description: "blabla",
-            client: "Riot Games",
-            links: [],
+            year: "2025",
+            description: "Here's a different shot I made to get a full grasp at my previous artwork 'Winter Bridge' inspired by Bram Lepelaar concept art",
+            client: "",
+            links: [
+                {
+                    url: "https://www.artstation.com/artwork/VdzaQZ",
+                    text: "Bram Lepelaar concept art",
+                },
+                {
+                    url: "https://www.artstation.com/artwork/VdzaQZ",
+                    text: "Winter bridge",
+                },
+            ],
             medias: [],
         }
     ],
